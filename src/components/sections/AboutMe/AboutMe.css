@@ -1,0 +1,9 @@
+.about-me-container {
+    height: calc(100vh - 55px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-top: #000 2px solid;
+}

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { MenuToggle } from "./menuToggle";
 import { NavMenu } from "./menu";
+import SectionsStrings from "../../../utils/enums";
 import "./HamburgerMenu.css"
 
 const HamburgerIcon = styled.div`
@@ -19,7 +20,6 @@ const MenuContainer = styled(motion.div)`
   max-width: 44%;
   height: 100%;
   background-color: #fff;
-  box-shadow: -2px 0 2px rgba(15, 15, 15, 0.3);
   z-index: 90;
   position: fixed;
   top: 0;
@@ -27,6 +27,7 @@ const MenuContainer = styled(motion.div)`
   transform: translateX(4em);
   user-select: none;
   padding: 1em 2.5em;
+  background-color: #ED5849;
 `;
 
 const TopContainer = styled.div`
@@ -61,7 +62,11 @@ const menuTransition = {
   delay: 0.1,
 };
 
-export function HamburgerMenu() {
+interface HamburgerMenuProps {
+  scrollToSection: (element: SectionsStrings) => void
+}
+
+export function HamburgerMenu({ scrollToSection }: HamburgerMenuProps) {
   const [isOpen, setOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -83,7 +88,7 @@ export function HamburgerMenu() {
           </IconContainer>
         </TopContainer>
         <ContentContainer>
-          <NavMenu isOpen={isOpen} />
+          <NavMenu isOpen={isOpen} scrollToSection={scrollToSection} toggle={toggleMenu}/>
         </ContentContainer>
       </MenuContainer>
     </div>

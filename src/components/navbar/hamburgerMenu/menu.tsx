@@ -1,25 +1,20 @@
 import { motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
+import SectionsStrings from "../../../utils/enums";
 
 const NavLink = styled(motion.li)`
   font-weight: 600;
-  height: 42px;
+  height: 6rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
-
-  a {
-    text-decoration: none;
-    color: #444;
-    font-size: 20px;
-    transition: all 200ms ease-in-out;
-  }
+  color: #f4d6d0;
 
   &:hover {
-    a {
-      color: red;
-    }
+    background-color: #FE9E8E;
+    color: #E12828;
   }
 `;
 
@@ -35,16 +30,23 @@ const variants = {
 };
 
 interface NavMenuProps {
-  isOpen: boolean
+  isOpen: boolean,
+  scrollToSection: (element: SectionsStrings) => void,
+  toggle: () => void
 };
 
+export function NavMenu({ isOpen, scrollToSection, toggle }: NavMenuProps) {
 
-export function NavMenu({ isOpen }: NavMenuProps) {
+  const selectMenuItem = (element: SectionsStrings) => {
+    scrollToSection(element)
+    toggle()
+  }
+
   return (
     <div className="menu-container">
       <ul className="menu-list">
         <NavLink
-          className="menu-link"
+          onClick={() => selectMenuItem("LANDING")}
           initial={false}
           animate={isOpen ? "show" : "hide"}
           variants={{
@@ -58,9 +60,10 @@ export function NavMenu({ isOpen }: NavMenuProps) {
             },
           }}
         >
-          <a href="#">Landing</a>
+          <div>Landing</div>
         </NavLink>
         <NavLink
+          onClick={() => selectMenuItem("PORTFOLIO")}
           initial={false}
           animate={isOpen ? "show" : "hide"}
           variants={{
@@ -74,9 +77,10 @@ export function NavMenu({ isOpen }: NavMenuProps) {
             },
           }}
         >
-          <a href="#">Portfolio</a>
+          Portfolio
         </NavLink>
         <NavLink
+          onClick={() => selectMenuItem("ABOUT")}
           initial={false}
           animate={isOpen ? "show" : "hide"}
           variants={{
@@ -90,9 +94,10 @@ export function NavMenu({ isOpen }: NavMenuProps) {
             },
           }}
         >
-          <a href="#">About me</a>
+          About me
         </NavLink>
         <NavLink
+          onClick={() => selectMenuItem("CONTACT")}
           initial={false}
           animate={isOpen ? "show" : "hide"}
           variants={{
@@ -106,7 +111,7 @@ export function NavMenu({ isOpen }: NavMenuProps) {
             },
           }}
         >
-          <a href="#">Contact</a>
+          Contact
         </NavLink>
       </ul>
     </div>

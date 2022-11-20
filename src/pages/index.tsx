@@ -3,19 +3,38 @@ import { RefObject, useRef } from "react"
 import type { HeadFC, PageProps } from "gatsby"
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
+import ScrollToTop from "../components/scrollToTop"
 import Landing from "../components/sections/Landing"
 import AboutMe from "../components/sections/AboutMe"
 import Portfolio from "../components/sections/Portfolio"
 import Contact from "../components/sections/Contact/Contact"
-import ScrollToTop from "../components/scrollToTop"
+import SectionsStrings from "../utils/enums"
 import "./index.css"
 
 const IndexPage: React.FC<PageProps> = () => {
+  const landing = useRef<HTMLDivElement>(null);
   const portfolio = useRef<HTMLDivElement>(null);
   const aboutMe = useRef<HTMLDivElement>(null);
   const contact = useRef<HTMLDivElement>(null);
 
-  const scrollToSection = (elementRef: RefObject<HTMLDivElement>) => {
+  const scrollToSection = (element: SectionsStrings) => {
+    let elementRef: RefObject<HTMLDivElement>
+
+    switch (element) {
+      case "PORTFOLIO":
+        elementRef = portfolio
+        break;
+      case "ABOUT":
+        elementRef = aboutMe
+        break;
+      case "CONTACT":
+        elementRef = contact
+        break;
+      default:
+        elementRef = landing
+        break;
+    }
+
     window.scrollTo({
       top: elementRef.current?.offsetTop,
       behavior: "smooth",
@@ -25,19 +44,10 @@ const IndexPage: React.FC<PageProps> = () => {
   return (
     <main className="site-container">
       <ScrollToTop/>
-      <Navbar/>
-      {/* <ul>
-          <li onClick={() => scrollToSection(portfolio)} className="link">
-            Portfolio
-          </li>
-          <li onClick={() => scrollToSection(aboutMe)} className="link">
-            AboutMe
-          </li>
-          <li onClick={() => scrollToSection(contact)} className="link">
-            Contact
-          </li>
-      </ul> */}
-      <Landing/>
+      <Navbar scrollToSection={scrollToSection}/>
+      <div ref={landing}>
+        <Landing/>
+      </div>
       <div ref={portfolio}>
         <Portfolio/>
       </div>

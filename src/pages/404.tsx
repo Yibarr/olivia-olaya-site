@@ -3,11 +3,6 @@ import { Link, HeadFC, PageProps } from "gatsby"
 import Navbar from "../components/navbar"
 import "./index.css"
 
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
 const headingStyles = {
   marginTop: 0,
   marginBottom: 64,
@@ -27,13 +22,12 @@ const codeStyles = {
 
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
-    <main style={pageStyles}>
-      <Navbar/>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
-        <Link to="/">Go home</Link>.
-      </p>
+    <main className="not-found-container">
+        <h1 style={headingStyles}>Page not found</h1>
+        <p style={paragraphStyles}>
+          Sorry 😔, we couldn’t find what you were looking for.
+          <Link to="/">Go home</Link>.
+        </p>
     </main>
   )
 }

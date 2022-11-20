@@ -1,22 +1,25 @@
-.top-btn-position {
+  .top-btn-container {
+    background-color: #FFBFB2;
+    border: #ED5849 2px solid;
     position: fixed;
-    bottom: 15px;
-    right: 20px;
-  }
-  
-  .top-btn-style {
-    height: 40px;
-    width: 40px;
+    bottom: 3rem;
+    right: 3rem;
     border-radius: 50%;
-    border: 2px solid #333;
-    background-color: #fff;
-    color: #333;
+    height: 4rem;
+    width: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
   }
   
-  .top-btn-style:hover {
+  .top-btn-style {
+    height: 3rem;
+    width: 2rem;
+  }
+  
+  .top-btn-container:hover {
     animation: none;
-    background-color: #333;
-    color: #fff;
-    border: 2px solid #fff;
+    background-color: #ED5849;
+    border: #FFBFB2 2px solid;
   }

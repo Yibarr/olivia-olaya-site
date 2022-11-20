@@ -6,7 +6,10 @@ export default function Footer() {
   return (
     <div className="footer-container">
         <h3>
-            Olivia Olaya { currentYear }
+            Olivia<br/> Olaya
+        </h3>
+        <h3 className="footer-year">
+          { currentYear }
         </h3>
     </div>
   );

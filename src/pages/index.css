@@ -1,7 +1,15 @@
 body {
     margin: 0;
+    font-family: "-apple-system, Roboto, sans-serif, serif";
 }
 
 .site-container {
-    background-color: bisque;
+    background-color: #FFBFB2;
+}
+
+.not-found-container {
+    color: #232129;
+    padding: 96px;
+    width: 100%;
+    background-color: #FFBFB2;
 }

@@ -23,6 +23,18 @@ const config: GatsbyConfig = {
         "path": "./src/pages/"
       },
       __key: "pages"
+    },
+    {
+      resolve: `gatsby-omni-font-loader`,
+      options: {
+        preconnect: [`https://fonts.googleapis.com`, `https://fonts.gstatic.com`],
+        web: [
+          {
+            name: `Covered By Your Grace`,
+            file: `https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap`,
+          },
+        ],
+      },
     }
   ]
 };

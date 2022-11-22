@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import heart from "../../resources/images/scrollTopHeart.png"
+import heart from "../../resources/images/scrollTopHeart.png"
 import "./scrollToTop.css"
 
 const ScrollToTop = () => {
@@ -26,7 +26,7 @@ const ScrollToTop = () => {
       {showScrollTopButton && (
         <div className="top-btn-container" onClick={scrollTop}>
           <img
-            src="../../../scrollTopHeart.png"
+            src={heart}
             alt="Heart"
             className="top-btn-style"
           />

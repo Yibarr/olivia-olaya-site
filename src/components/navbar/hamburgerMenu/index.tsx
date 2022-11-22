@@ -16,8 +16,7 @@ const HamburgerIcon = styled.div`
 
 const MenuContainer = styled(motion.div)`
   min-width: 300px;
-  width: 100%;
-  max-width: 44%;
+  max-width: 44vw;
   height: 100%;
   background-color: #fff;
   z-index: 90;

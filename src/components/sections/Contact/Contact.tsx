@@ -4,9 +4,12 @@ import "./Contact.css"
 export default function Contact() {
   return (
     <div className="contact-container">
-        <h3>
+        <div className="contact-title">
             Contact
-        </h3>
+        </div>
+        <div className="contact-card">
+          eperez@fad.unam.mx
+        </div>
     </div>
   );
 }

@@ -5,7 +5,7 @@
     align-items: center;
     background-color: #ED5849;
     position: fixed;
-    color: #f4d6d0;
+    color: #FFF;
     display: flex;
     justify-content: flex-start;
 }
@@ -17,7 +17,8 @@
     display: flex;
     align-items: center;
     padding: 0 2rem;
-    font-weight: 600;
+    font-weight: 400;
+    font-size: 2rem;
 }
 
 .nav-link:hover {
@@ -33,7 +34,9 @@
     width: fit-content;
     margin-left: 2rem;
     cursor: pointer;
-    font-weight: 600;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
 }
 
 .nav-links-container {

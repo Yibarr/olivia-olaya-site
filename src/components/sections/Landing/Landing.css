@@ -8,3 +8,17 @@
     flex-direction: column;
     color: #E12828;
 }
+
+.olivia-title {
+    font-size: 13em;
+    font-weight: 400;
+    margin: 0;
+    text-align: center;
+}
+
+.olivia-subtitle {
+    font-size: 3em;
+    font-weight: 400;
+    margin: 0;
+    text-align: center;
+}

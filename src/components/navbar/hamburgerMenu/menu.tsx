@@ -4,13 +4,15 @@ import styled from "styled-components";
 import SectionsStrings from "../../../utils/enums";
 
 const NavLink = styled(motion.li)`
-  font-weight: 600;
-  height: 6rem;
+  height: 15vh;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: #f4d6d0;
+  color: #FFF;
+  font-weight: 200;
+  font-size: 2rem;
+  line-height: 1.5rem;
 
   &:hover {
     background-color: #FE9E8E;

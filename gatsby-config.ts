@@ -3,8 +3,8 @@ import type { GatsbyConfig } from "gatsby";
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Olivia Olaya`,
-    description: `Personal site for Olivia Olaya portfolio`,
-    siteUrl: `https://www.yourdomain.tld`
+    description: `Olivia Olaya's personal portfolio site`,
+    siteUrl: `https://oliviaolaya.art`
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -16,6 +16,16 @@ const config: GatsbyConfig = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-styled-components",
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        description: `Olivia Olaya's personal portfolio site`,
+        name: `Olivia Olaya portfolio`,
+        short_name: `Olivia Olaya`,
+        icon: './src/resources/images/heart.png',
+        lang: `en`,
+      },
+    },
    {
       resolve: 'gatsby-source-filesystem',
       options: {

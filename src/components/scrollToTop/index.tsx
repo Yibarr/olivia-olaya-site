@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import heart from "../../resources/images/scrollTopHeart.png"
+import heart from "../../resources/images/heart.png"
 import "./scrollToTop.css"
 
 const ScrollToTop = () => {

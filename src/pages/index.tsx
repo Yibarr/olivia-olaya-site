@@ -12,13 +12,12 @@ import SectionsStrings from "../utils/enums"
 import "./index.css"
 
 const IndexPage: React.FC<PageProps> = () => {
-  const landing = useRef<HTMLDivElement>(null);
   const portfolio = useRef<HTMLDivElement>(null);
   const aboutMe = useRef<HTMLDivElement>(null);
   const contact = useRef<HTMLDivElement>(null);
 
   const scrollToSection = (element: SectionsStrings) => {
-    let elementRef: RefObject<HTMLDivElement>
+    let elementRef: RefObject<HTMLDivElement> | null
 
     switch (element) {
       case "PORTFOLIO":
@@ -31,34 +30,34 @@ const IndexPage: React.FC<PageProps> = () => {
         elementRef = contact
         break;
       default:
-        elementRef = landing
+        elementRef = null
         break;
     }
-
+  
     window.scrollTo({
-      top: elementRef.current?.offsetTop,
+      top: elementRef?.current?.offsetTop ?? 0,
       behavior: "smooth",
     });
   };
 
   return (
-    <main className="site-container">
-      <ScrollToTop/>
+    <div>
       <Navbar scrollToSection={scrollToSection}/>
-      <div ref={landing}>
+      <main className="site-container">
+        <ScrollToTop/>
         <Landing/>
-      </div>
-      <div ref={portfolio}>
-        <Portfolio/>
-      </div>
-      <div ref={aboutMe}>
-        <AboutMe/>
-      </div>
-      <div ref={contact}>
-        <Contact/>
-      </div>
-      <Footer/>
-    </main>
+        <div ref={portfolio}>
+          <Portfolio/>
+        </div>
+        <div ref={aboutMe}>
+          <AboutMe/>
+        </div>
+        <div ref={contact}>
+          <Contact/>
+        </div>
+        <Footer/>
+      </main>
+    </div>
   )
 }
 

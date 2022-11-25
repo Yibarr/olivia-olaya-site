@@ -1,10 +1,60 @@
-.about-me-container {
-    height: calc(100vh - 55px);
+.about-section {
     width: 100%;
+    padding-top: 55px;
+    background-color: #FE9E8E;
+    color: #E12828;
+    display: flex;
+    justify-content: center;
+}
+
+.about-me-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    color: #E12828;
-    background-color: #FE9E8E;
+    padding: 0 2rem;
+    width: 80%;
+}
+
+.about-me {
+    text-align: start;
+    height: 100%;
+    padding: 1rem 2rem;
+    margin: 0 3rem;
+    font-size: 2rem;
+}
+
+p {
+    margin: 0;
+}
+
+.img-container {
+    padding: 0%;  
+}
+
+.olivia-name-title {
+    text-align: center;
+}
+
+.olivia-img {
+    width: 30vw;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+@media only screen and (max-width: 768px) {
+    .about-me-container {
+        flex-direction: column-reverse;
+        padding: 0 0.1rem;
+     }
+
+     .about-me {
+        margin: 0;
+        font-size: 2rem;
+        padding: 0.6rem 1rem;
+    }
+
+    .olivia-img {
+        width: 45vw;
+    }
 }

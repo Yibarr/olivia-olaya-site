@@ -1,5 +1,5 @@
 import React from "react";
-import { RefObject } from "react"
+import heart from "../../resources/images/heart.png"
 import { HamburgerMenu } from "./hamburgerMenu";
 import SectionsStrings from "../../utils/enums";
 import "./Navbar.css"
@@ -14,6 +14,7 @@ export default function Navbar({ scrollToSection }: NavbarProps) {
     <div className="navbar-container">
       <div className="logo-container">
         <div className="logo" onClick={() => scrollToSection("LANDING")}>Olivia <br/> Olaya</div>
+        <img className="heart" src={heart} alt="heart" />
       </div>
       <div className="nav-links-container">
         <div className="nav-link" onClick={() => scrollToSection("PORTFOLIO")}>

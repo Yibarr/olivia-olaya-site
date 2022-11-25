@@ -11,9 +11,10 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   
-  .top-btn-style {
+  .top-btn-img {
     height: 3rem;
     width: 2rem;
   }
@@ -23,3 +24,7 @@
     background-color: #ED5849;
     border: #FFBFB2 2px solid;
   }
+
+  .top-btn-container:hover .top-btn-img {
+    filter: brightness(120%);
+  } 

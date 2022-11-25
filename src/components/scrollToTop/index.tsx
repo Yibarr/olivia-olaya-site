@@ -21,14 +21,18 @@ const ScrollToTop = () => {
       behavior: "smooth",
     });
   };
+ 
   return (
     <div>
       {showScrollTopButton && (
-        <div className="top-btn-container" onClick={scrollTop}>
+        <div
+          className="top-btn-container"
+          onClick={scrollTop}
+        >
           <img
             src={heart}
             alt="Heart"
-            className="top-btn-style"
+            className="top-btn-img"
           />
         </div>
       )}
